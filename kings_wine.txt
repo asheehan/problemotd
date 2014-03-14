@@ -1,12 +1,17 @@
-King's Wine
-In celebration of our king finding the village that was cheating him he decides to throw a celebration for the other 9 villages. In preparation for the celebration he orders 1000 barrels of the finest wine.
+King's Wine In celebration of our king finding the village that was cheating him he decides to throw a celebration for the other 9 villages. In
+preparation for the celebration he orders 1000 barrels of the finest wine.
 
-When the members of the uninvited village find out about the party they send an assassin to poison one of the barrels of wine. The poison takes 7 days to kill so the party guests won't realize what is happening for awhile.
+When the members of the uninvited village find out about the party they send an assassin to poison one of the barrels of wine. The poison takes 7
+days to kill so the party guests won't realize what is happening for awhile.
 
-However, after poisoning a random barrel the king's guard finds out and has the assassin executed. There is no time to order more wine so the king devises a genius plan to have his 10 loyal servants taste test the wine to find the poisoned barrel just in time for the party in 10 days. What is the plan that he devises so that he is left with 999 barrels of wine for the party?
+However, after poisoning a random barrel the king's guard finds out and has the assassin executed. There is no time to order more wine so the king
+devises a genius plan to have his 10 loyal servants taste test the wine to find the poisoned barrel just in time for the party in 10 days. What is
+the plan that he devises so that he is left with 999 barrels of wine for the party?
 
 
-SOLUTION: 
-Let's think about the 1000 barrels as numbered in binary (0000000001, 0000000010, ...).  Make each servant responsible for one digit, so everytime that digit is 1 or 'on' the servant must taste that barrel.  In 7 days when some servants die, you can find out which barrel is poisoned because the dead servants will count as 'on' bits.  Example: if servants 1, 2, 6, and 7 die (index of 1), then we know that barrel 99 was poisoned.
+SOLUTION: Let's think about the 1000 barrels as numbered in binary (0000000001, 0000000010, ...).  Make each servant responsible for one digit, so
+everytime that digit is 1 or 'on' the servant must taste that barrel.  In 7 days when some servants die, you can find out which barrel is poisoned
+because the dead servants will count as 'on' bits.  Example: if servants 1, 2, 6, and 7 die (index of 1), then we know that barrel 99 was poisoned.
 
-This could be more efficient with our servant usage and use the 3/4 day window we have (10 days for the party, 7 days to die) to save some servants, but I like this solution as it seems 'clean' and fairly simple to understand.
+This could be more efficient with our servant usage and use the 3/4 day window we have (10 days for the party, 7 days to die) to save some servants,
+but I like this solution as it seems 'clean' and fairly simple to understand.
