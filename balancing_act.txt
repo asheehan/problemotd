@@ -1,0 +1,43 @@
+Balancing Act
+Update: Accidentally forgot to make test 2 harder than test 1. Test 2 has been updated.
+
+Our village has undergone some changes since our last party with the king. You are now being considered for heir to the throne. The king has devised two tests for you to see if you are worthy.
+
+Test 1: You are given 9 balls and a balance scale. One of the balls weighs slightly less than the other 8. Using the scale only twice how can you figure out which ball weighs less than the others? Do not attempt to mark the ball once you find it.
+
+Test 2: You are given 12 balls and a balance scale. One of the balls weighs slightly less or slightly more than the other 11. Using the scale only three times how can you figure out which is the odd ball out?
+
+Test 1:
+	Divide up the balls into 3 groups of 3.
+	Place 2 of the groups (call them groups 1 and 2) on the balance scale.
+		If they are equal in weight, group 3 has the odd ball
+		If they are not equal, the lighter group has the odd ball.
+	Divide up the balls from the light group by 3 (recursion, yay!)
+	Place 2 of the balls on the balance scale
+		If they are equal, the ball not on the scale is the odd ball
+		If they are not equal, the lighter ball is the odd ball
+
+Test 2:
+	Divide up the balls into 3 groups of 4.
+	Place 2 of the groups (1 and 2) on the balance.
+		If they are equal, odd ball is in group 3.
+			Use the fact that we know group 1 and 2 balls are equal weight and take 2 balls from those groups
+				against two balls from group 3.
+				If they are not equal, the odd ball is one of the group 3 balls on the scale.
+				If they are equal, the odd ball is one of the group 3 balls on the scale.
+				FindOddBallFromTwo: In either case, take one of the odd ball group and weigh it against a known ball.
+					If equal, the odd ball is the unknown not on the scale.
+					If not equal, the odd ball is the group 3 ball on the scale.
+		If they are not equal, odd ball is in group 1 or 2.
+			Balance 2 group 1 (G1) balls and 2 group 2 (G2) balls against 1 G1, 1 G2, and 2 G3 balls.
+				If equal, odd ball is one of the unmeasured G1/G2 balls.
+					Use FindOddBallFromTwo method above to solve.
+				If not equal,
+					If the 2G1 + 2G2 side is heavier, then the odd ball is either one of the 2G1 or the 1G2.
+					If the 1G1 + 1G2 + 2G3 is heavier, then the odd ball is one of the 2G2 or the 1G1.
+					That gives us 3 possible balls.
+					Put the 2 balls from the same group on the balance.
+						If equal, single remaining ball is the odd ball
+						If not equal, and with some knowledge based on our last measurement...
+							If it's from G1 then the odd ball is the heavier one
+							If it's from G2 then the odd ball is the lighter one 
