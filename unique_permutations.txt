@@ -1,0 +1,17 @@
+Unique Permutations
+Today's problem comes from @mofodox.
+
+Given the string "Hello world hello" how many unique (case sensitive) permutations can you find?
+
+Solution: 
+17 characters total (counting spaces)
+E repeats twice
+L repeats 5 times
+O repeats 3 times
+space repeats twice
+
+(H and h are different given the rules)
+
+17! / (2! * 5! * 3! * 2!)
+= 123502579200
+
