@@ -1,0 +1,15 @@
+So, finally back at this shit!  Let’s do it.
+
+Cube Life
+You are given 64 1x1x1 cubes and asked to use them all to form one large cube. Afterward you paint all the sides of the larger in green. How many of the original 1x1x1 cubes will have no paint on them? How many of the original surfaces will have no paint on them (eg the top center cube would have 1 painted surface and 5 unpainted services)?
+
+Enjoy your weekend!
+
+Solution
+4^3 = 64, meaning that the sides of the final cube are 4 units long
+each side is 4x4 which yields 16 surfaces per side and 8 cubes in the cube’s center
+16x6 = 96 external surfaces
+64x6 = 384 total surfaces
+
+How many of the original 1x1x1 cubes will have no paint on them? 8 cubes
+How many of the original surfaces will have no paint on them? 288 surfaces unpainted
