@@ -1,13 +1,22 @@
 =begin
 
 Personal project to play around with some fantasy football stuff
+example output (in descending order of preference)
+
+$ ruby fantasy_football.rb qb
+Robert Griffin III
+Mike Glennon
+Ryan Fitzpatrick
+Austin Davis
+Michael Vick
+Blake Bortles
+Derek Carr
 
 =end
 
 require 'rubygems'
 require 'nokogiri'
 require 'open-uri'
-require 'pp'
 
 # get random seed via website with text/numbers
 espn_uris = {
