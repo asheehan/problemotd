@@ -18,7 +18,7 @@ require 'rubygems'
 require 'nokogiri'
 require 'open-uri'
 
-# get random seed via website with text/numbers
+# uris for espn and mengs data. currently needs to be updated weekly
 espn_uris = {
     'rb'  => 'http://espn.go.com/fantasy/football/story/_/page/14ranksWeek10RB/fantasy-football-Week-10-fantasy-football-running-back-rankings',
     'wr'  => 'http://espn.go.com/fantasy/football/story/_/page/14ranksWeek10WR/fantasy-football-Week-10-fantasy-football-wide-receiver-rankings',
