@@ -5,16 +5,22 @@ Given an array of integers find the largest consecutive sum of 3 integers. In th
 
 =end
 
+# traverse input array saving the sum of that variable and the next 2 in a new array if it's larger than the old maximum value
 def max_sum(input)
-    threes = Array.new
-    input.each_with_index { |x, i|
-        if i > (input.length - 3)
-            break
-        end
-        threes << [x, input[i+1], input[i+2]].inject(0, &:+)
-    }
-    p input.slice(threes.index(threes.max), 3)
+  max = 0
+  max_index = 0
+  input.each_with_index do |x, i|
+    if i > (input.length - 3)
+      break
+    end
+    current_value = [x, input[i+1], input[i+2]].inject(0, &:+)
+    if current_value > max
+      max = current_value
+      max_index = i
+    end
+  end
+  return input.slice((max_index), 3)
 end
 
-input = [1,5,8,4,2,7,4]
-max_sum(input)
+input = [1,5,8,4,9,7,4]
+p max_sum(input)
