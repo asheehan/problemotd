@@ -28,10 +28,10 @@ espn_uris = {
     'k'   => 'http://espn.go.com/fantasy/football/story/_/page/14ranksWeek10K/fantasy-football-week-10-fantasy-football-kicker-rankings',
 }
 mengs_uris = {
-    'rb'  => 'http://football9.myfantasyleague.com/2014/top?L=16839&SEARCHTYPE=BASIC&COUNT=32&YEAR=2014&START_WEEK=1&END_WEEK=8&CATEGORY=freeagent&POSITION=RB&DISPLAY=points&TEAM=*',
-    'wr'  => 'http://football9.myfantasyleague.com/2014/top?L=16839&SEARCHTYPE=BASIC&COUNT=32&YEAR=2014&START_WEEK=1&END_WEEK=8&CATEGORY=freeagent&POSITION=WR&DISPLAY=points&TEAM=*',
-    'qb'  => 'http://football9.myfantasyleague.com/2014/top?L=16839&SEARCHTYPE=BASIC&COUNT=32&YEAR=2014&START_WEEK=1&END_WEEK=8&CATEGORY=freeagent&POSITION=QB&DISPLAY=points&TEAM=*',
-    'def' => 'http://football9.myfantasyleague.com/2014/top?L=16839&SEARCHTYPE=BASIC&COUNT=32&YEAR=2014&START_WEEK=1&END_WEEK=8&CATEGORY=freeagent&POSITION=Def&DISPLAY=points&TEAM=*',
+    'rb'  => 'http://football9.myfantasyleague.com/2014/top?L=16839&SEARCHTYPE=BASIC&COUNT=32&YEAR=2014&START_WEEK=1&END_WEEK=9&CATEGORY=freeagent&POSITION=RB&DISPLAY=points&TEAM=*',
+    'wr'  => 'http://football9.myfantasyleague.com/2014/top?L=16839&SEARCHTYPE=BASIC&COUNT=32&YEAR=2014&START_WEEK=1&END_WEEK=9&CATEGORY=freeagent&POSITION=WR&DISPLAY=points&TEAM=*',
+    'qb'  => 'http://football9.myfantasyleague.com/2014/top?L=16839&SEARCHTYPE=BASIC&COUNT=32&YEAR=2014&START_WEEK=1&END_WEEK=9&CATEGORY=freeagent&POSITION=QB&DISPLAY=points&TEAM=*',
+    'def' => 'http://football9.myfantasyleague.com/2014/top?L=16839&SEARCHTYPE=BASIC&COUNT=32&YEAR=2014&START_WEEK=1&END_WEEK=9&CATEGORY=freeagent&POSITION=Def&DISPLAY=points&TEAM=*',
     'te'  => 'http://football9.myfantasyleague.com/2014/top?L=16839&SEARCHTYPE=BASIC&COUNT=32&YEAR=2014&START_WEEK=1&END_WEEK=9&CATEGORY=freeagent&POSITION=TE&DISPLAY=points&TEAM=*',
     'k'   => 'http://football9.myfantasyleague.com/2014/top?L=16839&SEARCHTYPE=BASIC&COUNT=32&YEAR=2014&START_WEEK=1&END_WEEK=9&CATEGORY=freeagent&POSITION=PK&DISPLAY=points&TEAM=*',
 }
