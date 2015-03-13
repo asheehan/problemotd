@@ -20,20 +20,20 @@ require 'open-uri'
 
 # uris for espn and mengs data. currently needs to be updated weekly
 espn_uris = {
-    'rb'  => 'http://espn.go.com/fantasy/football/story/_/page/14ranksWeek10RB/fantasy-football-Week-10-fantasy-football-running-back-rankings',
-    'wr'  => 'http://espn.go.com/fantasy/football/story/_/page/14ranksWeek10WR/fantasy-football-Week-10-fantasy-football-wide-receiver-rankings',
-    'qb'  => 'http://espn.go.com/fantasy/football/story/_/page/14ranksWeek10QB/fantasy-football-Week-10-fantasy-football-quarterback-rankings',
-    'def' => 'http://espn.go.com/fantasy/football/story/_/page/14ranksWeek10DST/fantasy-football-Week-10-fantasy-football-defense-rankings',
-    'te'  => 'http://espn.go.com/fantasy/football/story/_/page/14ranksWeek10TE/fantasy-football-week-10-fantasy-football-tight-end-rankings',
-    'k'   => 'http://espn.go.com/fantasy/football/story/_/page/14ranksWeek10K/fantasy-football-week-10-fantasy-football-kicker-rankings',
+    'rb'  => 'http://espn.go.com/fantasy/football/story/_/page/14ranksWeek12RB/fantasy-football-Week-12-fantasy-football-running-back-rankings',
+    'wr'  => 'http://espn.go.com/fantasy/football/story/_/page/14ranksWeek12WR/fantasy-football-Week-12-fantasy-football-wide-receiver-rankings',
+    'qb'  => 'http://espn.go.com/fantasy/football/story/_/page/14ranksWeek12QB/fantasy-football-Week-12-fantasy-football-quarterback-rankings',
+    'def' => 'http://espn.go.com/fantasy/football/story/_/page/14ranksWeek12DST/fantasy-football-Week-12-fantasy-football-defense-rankings',
+    'te'  => 'http://espn.go.com/fantasy/football/story/_/page/14ranksWeek12TE/fantasy-football-week-12-fantasy-football-tight-end-rankings',
+    'k'   => 'http://espn.go.com/fantasy/football/story/_/page/14ranksWeek12K/fantasy-football-week-12-fantasy-football-kicker-rankings',
 }
 mengs_uris = {
-    'rb'  => 'http://football9.myfantasyleague.com/2014/top?L=16839&SEARCHTYPE=BASIC&COUNT=32&YEAR=2014&START_WEEK=1&END_WEEK=9&CATEGORY=freeagent&POSITION=RB&DISPLAY=points&TEAM=*',
-    'wr'  => 'http://football9.myfantasyleague.com/2014/top?L=16839&SEARCHTYPE=BASIC&COUNT=32&YEAR=2014&START_WEEK=1&END_WEEK=9&CATEGORY=freeagent&POSITION=WR&DISPLAY=points&TEAM=*',
-    'qb'  => 'http://football9.myfantasyleague.com/2014/top?L=16839&SEARCHTYPE=BASIC&COUNT=32&YEAR=2014&START_WEEK=1&END_WEEK=9&CATEGORY=freeagent&POSITION=QB&DISPLAY=points&TEAM=*',
-    'def' => 'http://football9.myfantasyleague.com/2014/top?L=16839&SEARCHTYPE=BASIC&COUNT=32&YEAR=2014&START_WEEK=1&END_WEEK=9&CATEGORY=freeagent&POSITION=Def&DISPLAY=points&TEAM=*',
-    'te'  => 'http://football9.myfantasyleague.com/2014/top?L=16839&SEARCHTYPE=BASIC&COUNT=32&YEAR=2014&START_WEEK=1&END_WEEK=9&CATEGORY=freeagent&POSITION=TE&DISPLAY=points&TEAM=*',
-    'k'   => 'http://football9.myfantasyleague.com/2014/top?L=16839&SEARCHTYPE=BASIC&COUNT=32&YEAR=2014&START_WEEK=1&END_WEEK=9&CATEGORY=freeagent&POSITION=PK&DISPLAY=points&TEAM=*',
+    'rb'  => 'http://football9.myfantasyleague.com/2014/top?L=16839&SEARCHTYPE=BASIC&COUNT=32&YEAR=2014&START_WEEK=1&END_WEEK=11&CATEGORY=freeagent&POSITION=RB&DISPLAY=points&TEAM=*',
+    'wr'  => 'http://football9.myfantasyleague.com/2014/top?L=16839&SEARCHTYPE=BASIC&COUNT=32&YEAR=2014&START_WEEK=1&END_WEEK=11&CATEGORY=freeagent&POSITION=WR&DISPLAY=points&TEAM=*',
+    'qb'  => 'http://football9.myfantasyleague.com/2014/top?L=16839&SEARCHTYPE=BASIC&COUNT=32&YEAR=2014&START_WEEK=1&END_WEEK=11&CATEGORY=freeagent&POSITION=QB&DISPLAY=points&TEAM=*',
+    'def' => 'http://football9.myfantasyleague.com/2014/top?L=16839&SEARCHTYPE=BASIC&COUNT=32&YEAR=2014&START_WEEK=1&END_WEEK=11&CATEGORY=freeagent&POSITION=Def&DISPLAY=points&TEAM=*',
+    'te'  => 'http://football9.myfantasyleague.com/2014/top?L=16839&SEARCHTYPE=BASIC&COUNT=32&YEAR=2014&START_WEEK=1&END_WEEK=11&CATEGORY=freeagent&POSITION=TE&DISPLAY=points&TEAM=*',
+    'k'   => 'http://football9.myfantasyleague.com/2014/top?L=16839&SEARCHTYPE=BASIC&COUNT=32&YEAR=2014&START_WEEK=1&END_WEEK=11&CATEGORY=freeagent&POSITION=PK&DISPLAY=points&TEAM=*',
 }
 
 type = ARGV[0] ? ARGV[0] : ''
