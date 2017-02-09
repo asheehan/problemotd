@@ -20,36 +20,41 @@ require 'open-uri'
 
 # uris for espn and mengs data. currently needs to be updated weekly
 espn_uris = {
-    'rb'  => 'http://espn.go.com/fantasy/football/story/_/page/14ranksWeek12RB/fantasy-football-Week-12-fantasy-football-running-back-rankings',
-    'wr'  => 'http://espn.go.com/fantasy/football/story/_/page/14ranksWeek12WR/fantasy-football-Week-12-fantasy-football-wide-receiver-rankings',
-    'qb'  => 'http://espn.go.com/fantasy/football/story/_/page/14ranksWeek12QB/fantasy-football-Week-12-fantasy-football-quarterback-rankings',
-    'def' => 'http://espn.go.com/fantasy/football/story/_/page/14ranksWeek12DST/fantasy-football-Week-12-fantasy-football-defense-rankings',
-    'te'  => 'http://espn.go.com/fantasy/football/story/_/page/14ranksWeek12TE/fantasy-football-week-12-fantasy-football-tight-end-rankings',
-    'k'   => 'http://espn.go.com/fantasy/football/story/_/page/14ranksWeek12K/fantasy-football-week-12-fantasy-football-kicker-rankings',
+    'rb'  => 'http://espn.go.com/fantasy/football/story/_/page/15ranksWeek2RB/fantasy-football-week-2-rankings-running-backs-top-25-rb',
+    'wr'  => 'http://espn.go.com/fantasy/football/story/_/page/15ranksWeek2WR/fantasy-football-week-2-rankings-wide-receivers-top-25-wr',
+    'qb'  => 'http://espn.go.com/fantasy/football/story/_/page/15ranksWeek2QB/fantasy-football-week-2-rankings-quarterbacks-top-25-qb',
+    'def' => 'http://espn.go.com/fantasy/football/story/_/page/15ranksWeek2DST/fantasy-football-week-2-rankings-defenses-dst-def',
+    'te'  => '',
+    'k'   => '',
 }
 mengs_uris = {
-    'rb'  => 'http://football9.myfantasyleague.com/2014/top?L=16839&SEARCHTYPE=BASIC&COUNT=32&YEAR=2014&START_WEEK=1&END_WEEK=11&CATEGORY=freeagent&POSITION=RB&DISPLAY=points&TEAM=*',
-    'wr'  => 'http://football9.myfantasyleague.com/2014/top?L=16839&SEARCHTYPE=BASIC&COUNT=32&YEAR=2014&START_WEEK=1&END_WEEK=11&CATEGORY=freeagent&POSITION=WR&DISPLAY=points&TEAM=*',
-    'qb'  => 'http://football9.myfantasyleague.com/2014/top?L=16839&SEARCHTYPE=BASIC&COUNT=32&YEAR=2014&START_WEEK=1&END_WEEK=11&CATEGORY=freeagent&POSITION=QB&DISPLAY=points&TEAM=*',
-    'def' => 'http://football9.myfantasyleague.com/2014/top?L=16839&SEARCHTYPE=BASIC&COUNT=32&YEAR=2014&START_WEEK=1&END_WEEK=11&CATEGORY=freeagent&POSITION=Def&DISPLAY=points&TEAM=*',
-    'te'  => 'http://football9.myfantasyleague.com/2014/top?L=16839&SEARCHTYPE=BASIC&COUNT=32&YEAR=2014&START_WEEK=1&END_WEEK=11&CATEGORY=freeagent&POSITION=TE&DISPLAY=points&TEAM=*',
-    'k'   => 'http://football9.myfantasyleague.com/2014/top?L=16839&SEARCHTYPE=BASIC&COUNT=32&YEAR=2014&START_WEEK=1&END_WEEK=11&CATEGORY=freeagent&POSITION=PK&DISPLAY=points&TEAM=*',
+    'rb'  => 'http://football9.myfantasyleague.com/2015/top?L=11945&SEARCHTYPE=BASIC&COUNT=300&YEAR=2015&START_WEEK=1&END_WEEK=1&CATEGORY=freeagent&POSITION=RB&DISPLAY=points&TEAM=*',
+    'wr'  => 'http://football9.myfantasyleague.com/2015/top?L=11945&SEARCHTYPE=BASIC&COUNT=300&YEAR=2015&START_WEEK=1&END_WEEK=1&CATEGORY=freeagent&POSITION=WR&DISPLAY=points&TEAM=*',
+    'qb'  => 'http://football9.myfantasyleague.com/2015/top?L=11945&SEARCHTYPE=BASIC&COUNT=300&YEAR=2015&START_WEEK=1&END_WEEK=1&CATEGORY=freeagent&POSITION=QB&DISPLAY=points&TEAM=*',
+    'def' => 'http://football9.myfantasyleague.com/2015/top?L=11945&SEARCHTYPE=BASIC&COUNT=300&YEAR=2015&START_WEEK=1&END_WEEK=1&CATEGORY=freeagent&POSITION=Def&DISPLAY=points&TEAM=*',
+    'te'  => 'http://football9.myfantasyleague.com/2015/top?L=11945&SEARCHTYPE=BASIC&COUNT=300&YEAR=2015&START_WEEK=1&END_WEEK=1&CATEGORY=freeagent&POSITION=TE&DISPLAY=points&TEAM=*',
+    'k'   => 'http://football9.myfantasyleague.com/2015/top?L=11945&SEARCHTYPE=BASIC&COUNT=300&YEAR=2015&START_WEEK=1&END_WEEK=1&CATEGORY=freeagent&POSITION=PK&DISPLAY=points&TEAM=*',
 }
 
 type = ARGV[0] ? ARGV[0] : ''
 
 # get espn weekly data
 page = Nokogiri::HTML(open(espn_uris[type]))
-rows = page.xpath('//table/tbody/tr[@class="last"]')
+rows = page.css('div.article-body')
+# puts page.css('article.article')
+# rows = page.xpath('//*[@id="rankings"]/tbody')
+# rows = page.xpath('//table/tbody/tr[@class="last"]')
+p rows
 espn = rows.collect do |row|
   detail = {}
   [
       [:rank, 'td[1]'],
       [:name, 'td[2]/a'],
   ].each do |name, xpath|
+    p detail
     detail[name] = row.at_xpath(xpath).text.strip
   end
-  detail
+  p detail
 end
 
 # get available free agent data
